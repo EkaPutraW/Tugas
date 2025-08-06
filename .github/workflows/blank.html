@@ -1,36 +1,197 @@
-# This is a basic workflow to help you get started with Actions
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Khusus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf4;
+      color: #333;
+      overflow-x: hidden;
+    }
 
-name: CI
+    #intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #2b84f1, #ff9274);
+      text-align: center;
+      padding: 2rem;
+    }
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    #intro h1 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    #intro button {
+      padding: 15px 30px;
+      background-color: white;
+      color: #ff4081;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    #intro button:hover {
+      background-color: #ffe6f0;
+    }
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    header, section, .footer {
+      display: none;
+    }
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    header {
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: #ffc3a0;
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+
+    .footer {
+      background: #fce4ec;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pembuka -->
+  <div id="intro">
+    <h1>Undangan Spesial Buat Kamu CBL <em><q>Cuma Bisa Lesley</q></em> 🎉</h1>
+    <button onclick="bukaUndangan()">Monyet Rebahan Mulu</button>
+  </div>
+
+  <!-- Musik -->
+  <audio id="djmusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+  <!-- Isi Undangan -->
+  <header>
+    <h1>Undangan Spesial</h1>
+    <p>Acara Pernikahan & Ulang Tahun</p>
+  </header>
+
+  <section id="pernikahan">
+    <h2>Undangan Pernikahan</h2>
+    <div class="divider"></div>
+    <p>
+      Dengan penuh rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i
+      untuk hadir dalam acara pernikahan kami:
+    </p>
+    <p><strong>To & Yann</strong></p>
+    <p>
+      🗓️ Sabtu, 21 September 2025 <br>
+      🕐 Pukul 10.00 WIB - Selesai <br>
+      📍 tambangan
+    </p>
+    <p>
+      Kehadiran dan doa restu Anda adalah hadiah terindah bagi kami.  
+      Terima kasih atas perhatiannya.
+    </p>
+  </section>
+
+  <section id="ultah">
+    <h2>Undangan Pesta!!!</h2>
+    <div class="divider"></div>
+    <p><strong>Farel</strong></p>
+    <p>
+      Halo teman-teman! 🎉<br>
+      Ayo datang dan rayakan ulang tahunku yang ke-29 bersama!
+    </p>
+    <p>
+      🗓️ Minggu, 28 September 2025 <br>
+      🕐 Pukul 15.00 WIB <br>
+      📍 Cafe Ceria, Jl. Bahagia No. 7, Jakarta
+    </p>
+    <p>
+      Akan ada makanan enak 🍕, games seru 🎯, dan tentunya keseruan tiada henti!  
+      Jangan lupa bawa kado kalo gak yaudah, ya! 😁
+    </p>
+    <p><a href="https://maps.app.goo.gl/1j7jVzpDSJ6pBnLT7/"> Google Map To My House</a>.</p> //Buat masukin link
+  </section>
+
+  <div class="footer">
+    © 2025 Undangan Khusus Kamu.
+  </div>
+
+  <script>
+    function bukaUndangan() {
+      document.getElementById('intro').style.display = 'none';
+      document.querySelector('header').style.display = 'block';
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'block');
+      document.querySelector('.footer').style.display = 'block';
+
+      const audio = document.getElementById('djmusic');
+      audio.play();
+    }
+
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect().top;
+        if (rect < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    });
+
+    // Trigger on load
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+</body>
+</html>
+
